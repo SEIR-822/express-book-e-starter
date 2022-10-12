@@ -23,13 +23,14 @@ app.use(express.urlencoded({ extended: true }))
 //=============================================================================
 // Redirect
 app.get('/', (req, res) => {
-    res.send('Hello world!')
-    // res.redirect('/api/bookmarks')
+    // res.send('Hello world!')
+    res.redirect('/api/bookmarks')
 })
 
 
 /* START CONTROLLERS HERE */
-
+const bookmarksController = require('./controllers/bookmarksController')
+app.use('/api/bookmarks', bookmarksController)
 /* END CONTROLLERS HERE */
 
 
